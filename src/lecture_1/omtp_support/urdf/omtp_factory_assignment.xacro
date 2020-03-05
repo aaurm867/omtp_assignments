@@ -78,7 +78,7 @@
   <joint name="abbrobot_to_world_interface" type="fixed">
     <parent link="world_interface" />
     <child link="abbrobot_base_link" />
-    <origin xyz="0.5 -6.0 0.0" rpy="0.0 0.0 0.0"/>
+    <origin xyz="0.15 -6.0 0.0" rpy="0.0 0.0 0.0"/>
   </joint>
 
   <!-- gripper1 to robot1. -->
