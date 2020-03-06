@@ -137,6 +137,15 @@ $RECYCLE.BIN/
 .AppleDouble
 .LSOverride
 
+## VS CODE ##
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
 # End of https://www.gitignore.io/api/ros,c++,linux,windows
 
 src/CMakeLists.txt
