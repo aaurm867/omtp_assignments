@@ -12,7 +12,7 @@ The tutorials [Building a Visual Robot Model with URDF from Scratch](http://wiki
 
 ### 2. Xacro tutorials
 
-The tutorial [Using Xacro to Clean Up a URDF File](http://wiki.ros.org/urdf/Tutorials/Using%20Xacro%20to%20Clean%20Up%20a%20URDF%20Filehttp://wiki.ros.org/urdf/Tutorials/Using%20Xacro%20to%20Clean%20Up%20a%20URDF%20File) is applied in [this file](urdf_tutorial/urdf/08-macroed.urdf.xacro)
+The tutorial [Using Xacro to Clean Up a URDF File](http://wiki.ros.org/urdf/Tutorials/Using%20Xacro%20to%20Clean%20Up%20a%20URDF%20Filehttp://wiki.ros.org/urdf/Tutorials/Using%20Xacro%20to%20Clean%20Up%20a%20URDF%20File) is applied in [this file](urdf_tutorial/urdf/08-macroed.urdf.xacro).
 
 ### 3.-6. Factory
 The edited launch file can be found [here](omtp_support/urdf/omtp_factory_assignment.xacro)
@@ -22,6 +22,8 @@ The edited launch file can be found [here](omtp_support/urdf/omtp_factory_assign
 * To see the factory created in assignments 3 to 6, use the command `roslaunch omtp_support visualize_omtp_factory.launch`
 
 ## Ideas for Future Work: 
-The submission has concrete future ideas for improving the project
+The submission has concrete future ideas for improving the project. A few examples are:
+- Adding geometry that makes sense within the factory
+- Integrating robots with different tools and from several companies
 
 
