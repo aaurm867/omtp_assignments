@@ -35,6 +35,10 @@
   <!-- Vacuum Gripper1 -->
   <xacro:include filename="$(find omtp_support)/urdf/vacuum_gripper/vacuum_gripper.urdf.xacro"/>
   <xacro:vacuum_gripper_urdf prefix="vacuum_gripper1_" joint_prefix="vacuum_gripper1_joint"/>
+  
+  <!-- Vacuum Gripper2 -->
+  <xacro:include filename="$(find omtp_support)/urdf/vacuum_gripper/vacuum_gripper.urdf.xacro"/>
+  <xacro:vacuum_gripper_urdf prefix="vacuum_gripper2_" joint_prefix="vacuum_gripper2_joint"/>
 
   <!-- bins -->
   <xacro:include filename="$(find omtp_support)/urdf/bin/bin.urdf.xacro"/>
@@ -68,7 +72,7 @@
 
   <!-- robot1 to pedestal. -->
   <joint name="robot1_to_pedestal" type="fixed">
-    <origin xyz="0 0 0.95" rpy="0 0 0" />
+    <origin xyz="0 0 0.95" rpy="0 0 0" />		
     <parent link="robot1_pedestal_link" />
     <child link="robot1_base_link" />
   </joint>
@@ -98,6 +102,12 @@
   <joint name="gripper1_to_robot1" type="fixed">
     <parent link="robot1_tool0" />
     <child link="vacuum_gripper1_base_link" />
+  </joint>
+  
+  <!-- gripper1 to robot1. -->
+  <joint name="gripper2_to_robot2" type="fixed">
+    <parent link="robot2_tool0" />
+    <child link="vacuum_gripper2_base_link" />
   </joint>
 
   <!-- bin 1 -->
