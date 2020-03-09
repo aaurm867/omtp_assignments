@@ -55,6 +55,8 @@ devel/
 logs/
 build/
 bin/
+!**/urdf/**/bin/
+!**/meshes/**/bin/
 lib/
 msg_gen/
 srv_gen/
@@ -128,4 +130,20 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+## MAC ##
+
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+## VS CODE ##
+
+.vscode/*
+*.code-workspace
+
 # End of https://www.gitignore.io/api/ros,c++,linux,windows
+
+src/CMakeLists.txt
+
+*.idea
