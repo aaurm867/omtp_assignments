@@ -55,6 +55,8 @@ devel/
 logs/
 build/
 bin/
+!**/urdf/**/bin/
+!**/meshes/**/bin/
 lib/
 msg_gen/
 srv_gen/
@@ -141,3 +143,7 @@ $RECYCLE.BIN/
 *.code-workspace
 
 # End of https://www.gitignore.io/api/ros,c++,linux,windows
+
+src/CMakeLists.txt
+
+*.idea
