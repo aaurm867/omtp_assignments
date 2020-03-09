@@ -22,4 +22,4 @@ The tutorial [Using Xacro to Clean Up a URDF File](http://wiki.ros.org/urdf/Tuto
 
 ### 3.-6. Factory
 
-The edited launch file can be found [here](omtp_support/urdf/omtp_factory_assignment.xacro)
+The edited xacro file can be found [here](omtp_support/urdf/omtp_factory_assignment.xacro), the [launch file](omtp_support/launch/visualize_omtp_factory.launch) was also edited in order for it to visualize the edited xacro file.
