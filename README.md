@@ -15,16 +15,11 @@ sudo apt install ros-melodic-abb-irb6640-support
 
 
 ## Authors: 
-Ander González Tomé (agonza19@student.aau.dk)
-
-Kristian Hyttel Pedersen (khpe16@student.aau.dk)
-
-Sarvesh Kumar Malladi (smalla19@student.aau.dk)
-
-Beda Berner (bberne19@student.aau.dk)
-
-Iñigo Moreno I Caireta (imoren19@student.aau.dk)
-
-Guillermo Mendiguchia Martinez (gmendi19@student.aau.dk)
+* Ander González Tomé ([agonza19@student.aau.dk](mailto:agonza19@student.aau.dk))
+* Kristian Hyttel Pedersen ([khpe16@student.aau.dk](mailto:khpe16@student.aau.dk))
+* Sarvesh Kumar Malladi ([smalla19@student.aau.dk](mailto:smalla19@student.aau.dk))
+* Beda Berner ([bberne19@student.aau.dk](mailto:bberne19@student.aau.dk))
+* Iñigo Moreno i Caireta ([imoren19@student.aau.dk](mailto:imoren19@student.aau.dk))
+* Guillermo Mendiguchia Martinez ([gmendi19@student.aau.dk](mailto:gmendi19@student.aau.dk))
 
 
