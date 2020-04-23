@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="omtp_world">
+    <!-- Set the initial camera pose to be looking at the workspace. -->
+    <gui>
+      <camera name="user_camera">
+        <pose>-4.20 2.00 6.10 0 0.9 -0.27</pose>
+      </camera>
+    </gui>
+
+    <physics type="ode">
+      <!-- You can make the simulation run faster than real-time if you increase 'max_step_size' and 'real_time_update_rate'.
+           'max_step_size' should not be increased too much as it will start to break the ODE solver. Max is probably 0.002
+           from some basic tests. Try for instance
+             max_step_size = 0.002
+             real_time_update_rate = 2000
+           It gives a max of 4x real-time if your computer can handle it.
+        -->
+      <real_time_factor>10</real_time_factor> <!-- 'max_step_size' * 'real_time_update_rate' sets an upper bound of real_time_factor -->
+      <max_step_size>0.001</max_step_size> <!-- The maximum time step size that can be taken by a variable time-step solver, default: 0.001 -->
+      <real_time_update_rate>2000</real_time_update_rate> <!-- The frequency at which the simulation time steps are advanced, default: 1000 Hz -->
+    </physics>
+
+    <!-- Disable shadows. -->
+    <scene>
+      <shadows>false</shadows>
+    </scene>
+
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- A directed light source -->
+    <light name="camera_spot_light" type='spot'>
+      <pose>-10 10 10 0 -1 -0.8</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0 0 -1</direction>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>1</outer_angle>
+        <falloff>1</falloff>
+      </spot>
+    </light>
+
+    <include>
+      <uri>model://conveyor</uri>
+      <pose>1.2 5 0 0 0 -1.571</pose>
+    </include>
+
+    <include>
+      <uri>model://deletion_wall</uri>
+      <pose>1.2 -5.1 1.425 0 0 1.5708</pose>
+    </include>
+
+  </world>
+</sdf>
