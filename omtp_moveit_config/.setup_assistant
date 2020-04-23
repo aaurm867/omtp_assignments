@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: omtp_support
+    relative_path: urdf/omtp_factory.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/omtp.srdf
+  CONFIG:
+    author_name: Group867
+    author_email: 20gr867@es.aau.dk
+    generated_timestamp: 1587651030
