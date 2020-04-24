@@ -1,8 +1,9 @@
 # Lecture 5: moveit intro
 
-All the assignments were follwing the instructions in the lecture [slides](slides.pdf).
+All the assignments were follwing the instructions in the lecture [slides](OMTP_LEC_5_MANIPULATION_WITH_MOVEIT.pdf).
 
 ## Dependencies
+
 ```bash
 sudo apt-get install ros-melodic-moveit ros-melodic-moveit-commander ros-melodic-joint-trajectory-controller ros-melodic-trac-ik-kinematics-plugin ros-melodic-ros-control ros-melodic-gazebo-ros-control
 ```
