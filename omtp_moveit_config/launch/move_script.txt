@@ -1,7 +1,0 @@
-use Robot1
-go R1Up
-go R1Home
-go R1PreGrasp
-go R1Place
-go up 0.3
-go R1Home
