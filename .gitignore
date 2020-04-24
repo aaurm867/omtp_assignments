@@ -145,5 +145,7 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/ros,c++,linux,windows
 
 src/CMakeLists.txt
-
+.idea/*
 *.idea
+
+*.asv
