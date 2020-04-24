@@ -1,6 +1,6 @@
 # Lecture 4 Documentation
 
-[Lecture 4 slides](Slides lecture 4.pdf)
+[Lecture 4 slides](Slides_lecture_4.pdf)
 
 ## Requirements: 
 Install [MuJoCo Haptix](http://www.mujoco.org/book/haptix.html)
