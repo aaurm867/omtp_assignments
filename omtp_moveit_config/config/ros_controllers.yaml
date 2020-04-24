@@ -28,7 +28,7 @@ joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 50
 controller_list:
-  - name: robot1/Robot1_controller
+  - name: robot1/robot1_controller
     action_ns: follow_joint_trajectory
     default: True
     type: FollowJointTrajectory
@@ -39,7 +39,7 @@ controller_list:
       - robot1_wrist_1_joint
       - robot1_wrist_2_joint
       - robot1_wrist_3_joint
-  - name: robot2/Robot2_controller
+  - name: robot2/robot2_controller
     action_ns: follow_joint_trajectory
     default: True
     type: FollowJointTrajectory
