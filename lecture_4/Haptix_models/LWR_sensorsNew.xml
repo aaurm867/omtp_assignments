@@ -1,0 +1,37 @@
+<!-- ======================================================
+	MuJoCo model
+	
+	Model   : Kuka LWR left arm - sensors
+	Author  : Aljaz Kramberger
+
+	Copyright 2020 SDU 
+
+
+====================================================== -->
+
+<mujocoinclude>
+	<sensor>
+		<jointpos name="LWR/sen_pos_joint1" joint="LWR/joint1" />
+		<jointpos name="LWR/sen_pos_joint2" joint="LWR/joint2" />
+		<jointpos name="LWR/sen_pos_joint3" joint="LWR/joint3" />
+		<jointpos name="LWR/sen_pos_joint4" joint="LWR/joint4" />
+		<jointpos name="LWR/sen_pos_joint5" joint="LWR/joint5" />
+		<jointpos name="LWR/sen_pos_joint6" joint="LWR/joint6" />
+		<jointpos name="LWR/sen_pos_joint7" joint="LWR/joint7" />
+		
+		<jointvel name="LWR/sen_vel_joint1" joint="LWR/joint1" />
+		<jointvel name="LWR/sen_vel_joint2" joint="LWR/joint2" />
+		<jointvel name="LWR/sen_vel_joint3" joint="LWR/joint3" />
+		<jointvel name="LWR/sen_vel_joint4" joint="LWR/joint4" />
+		<jointvel name="LWR/sen_vel_joint5" joint="LWR/joint5" />
+		<jointvel name="LWR/sen_vel_joint6" joint="LWR/joint6" />
+		<jointvel name="LWR/sen_vel_joint7" joint="LWR/joint7" />
+		
+		<framepos name="LWR/EE_pos" objtype="site" objname="LWR/EE" />
+		<framequat name="LWR/EE_quat" objtype="site" objname="LWR/EE" />
+		
+		<force name="LWR/TcpF" site="LWR/EE" />
+		<torque name="LWR/TcpT" site="LWR/EE"/>
+	</sensor>
+</mujocoinclude>
+

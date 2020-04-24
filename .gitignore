@@ -147,3 +147,5 @@ $RECYCLE.BIN/
 src/CMakeLists.txt
 
 *.idea
+
+*.asv

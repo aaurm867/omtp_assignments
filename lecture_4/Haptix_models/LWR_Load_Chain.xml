@@ -1,0 +1,66 @@
+<!--	======================================================
+	MuJoCo	model
+	
+	Model		:	Kuka	LWR	arm	-	body	chain
+	Author		:	Aljaz Kramberger
+
+	Copyright	2020	SDU	
+
+======================================================	-->
+
+<mujocoinclude>
+	<body name="LWR_R" pos="0 0 0" quat="1 0 0 0" childclass="LWR">
+		<inertial pos="0 0 0.055" quat="0 1 0 0" mass="1.29591" diaginertia="0.00211665 0.00211665 0.00161988" />
+		<geom type="mesh" contype="0" mesh="LWR_Base1a_b" />
+		<geom type="mesh" pos="0 0 -0.001" material="LWR_silver" contype="0" mesh="LWR_Base1b_b" />
+
+		<body name="LWR/link1" pos="0 0 0.11" quat="0.707107 0 0 -0.707107" >
+			<inertial pos="0 0 0.1" quat="0 1 0 0" mass="2.35619" diaginertia="0.0093266 0.0093266 0.00294524" />
+			<joint name="LWR/joint1" type="hinge" pos="0 0 0" axis="0 0 1" range="-2.9671 2.9671"/>
+			<geom type="mesh" pos="0 0 -0.11" mesh="LWR_Link1a_b" />
+			<geom type="mesh" pos="0 0 -0.11" material="LWR_silver" mesh="LWR_Link1b_b" />
+		
+			<body name="LWR/link2" pos="0 0 0.2" >
+				<inertial pos="0 0 0.1" quat="0 1 0 0" mass="2.94524" diaginertia="0.0171806 0.0171806 0.00368155" />
+				<joint name="LWR/joint2" type="hinge" pos="0 0 0" axis="1 0 0" range="-2.0944 2.0944"/>
+				<geom type="mesh" pos="0 0 -0.31" mesh="LWR_Link2a_b" />
+				<geom type="mesh" pos="0 0 -0.31" material="LWR_silver" mesh="LWR_Link2b_b" />
+
+				<body name="LWR/link3" pos="0 0 0.2" quat="0 0 0 1" >
+					<inertial pos="0 0 0.1" quat="0 1 0 0" mass="2.94524" diaginertia="0.0171806 0.0171806 0.00368155" />
+					<joint name="LWR/joint3" type="hinge" pos="0 0 0" axis="0 0 1" range="-2.9671 2.9671"/>
+					<geom type="mesh" pos="0 0 -0.51" quat="1 0 0 0" mesh="LWR_Link3a_b" />
+					<geom type="mesh" pos="0 0 -0.51" quat="1 0 0 0" material="LWR_silver" mesh="LWR_Link3b_b" />
+
+					<body name="LWR/link4" pos="0 0 0.2" >
+						<inertial pos="0 0 0.1" quat="0 1 0 0" mass="2.94524" diaginertia="0.0171806 0.0171806 0.00368155" />
+						<joint name="LWR/joint4" type="hinge" pos="0 0 0" axis="1 0 0" range="-2.0944 2.0944"/>
+						<geom type="mesh" pos="0 0 -0.71" quat="1 0 0 0" mesh="LWR_Link4a_b" />
+						<geom type="mesh" pos="0 0 -0.71" quat="1 0 0 0" material="LWR_silver" mesh="LWR_Link4b_b" />
+					
+						<body name="LWR/link5" pos="0 0 0.2" quat="0 0 0 1" >
+							<inertial pos="0 0 0.095" quat="0 1 0 0" mass="2.82743" diaginertia="0.0153388 0.0153388 0.00353429" />
+							<joint name="LWR/joint5" type="hinge" pos="0 0 0" axis="0 0 1" range="-2.9671    2.9671"/>
+							<geom type="mesh" pos="0 0 -0.91" quat="1 0 0 0" mesh="LWR_Link5a_b" />
+			
+							<body name="LWR/link6" pos="0 0 0.19" >
+								<inertial pos="0 0 0.019" quat="0 1 0 0" mass="1.03673" diaginertia="0.00131699 0.00131699 0.00129591" />
+								<joint name="LWR/joint6" type="hinge" pos="0 0 0" axis="1 0 0" range="-2.0944 2.0944"/>
+								<geom type="mesh" pos="0 0 -1.1" quat="1 0 0 0" material="LWR_silver" mesh="LWR_Link6a_b" />
+
+								<body name="LWR/link7" pos="0 0 0.078" >
+									<inertial pos="0 0 -0.02" quat="0 1 0 0" mass="0.603186" diaginertia="0.000562973 0.000562973 0.000482549" />
+									<joint name="LWR/joint7" type="hinge" pos="0 0 0" axis="0 0 1" range="-2.9671 2.9671"/>
+									<geom type="mesh" pos="0 0 -1.178" quat="1 0 0 0" rgba = "0.2 0.2 0.2 1" mesh="LWR_Link7a_b" />
+									<site name="LWR/EE" pos="0 0 0.14" />
+									<include file="gripper_Chain.xml"/>
+								</body>
+							</body>
+						</body>
+					</body>
+				</body>
+			</body>
+		</body>
+	</body>
+	
+</mujocoinclude>

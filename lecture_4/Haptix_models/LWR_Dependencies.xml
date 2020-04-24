@@ -1,0 +1,41 @@
+<!-- ======================================================
+	MuJoCo model
+	
+	Model   : Kuka LWR - dependencies 
+	Author  : Aljaz Kramberger
+
+	Copyright 2020 SDU 
+
+====================================================== -->
+
+<mujocoinclude>
+	<default>
+		<default class="LWR"> 
+			<geom material="LWR_orange" group="1" contype="0" conaffinity="1" condim="4" margin="0.0001"/>
+			<joint limited="true" damping="40" armature="0" range="-3 3"/>
+			<site material="LWR_site" type="sphere" size="0.01" group="1"/>
+			<general gear="1" biastype="affine" gainprm="800" biasprm="0 -800 -800"/>
+		</default>
+	</default>
+	<asset>
+		<material name="LWR_orange" specular=".3" shininess=".6" rgba="0.9 0.5 0.1 1"/>
+		<material name="LWR_silver" specular=".3" shininess=".3" rgba="0.8 0.8 0.8 1"/>
+		<material name="LWR_site"  rgba=".3 .9 .3 .3"/>
+	
+		<mesh file="LWR/LWR_Base1a_b.stl" scale="0.1 0.1 0.1" />
+		<mesh file="LWR/LWR_Base1b_b.stl" scale="0.1 0.1 0.1" />
+		<mesh file="LWR/LWR_Link1a_b.stl" scale="0.1 0.1 0.1" />
+		<mesh file="LWR/LWR_Link1b_b.stl" scale="0.1 0.1 0.1" />
+		<mesh file="LWR/LWR_Link2a_b.stl" scale="0.1 0.1 0.1" />
+		<mesh file="LWR/LWR_Link2b_b.stl" scale="0.1 0.1 0.1" />
+		<mesh file="LWR/LWR_Link3a_b.stl" scale="0.1 0.1 0.1" />
+		<mesh file="LWR/LWR_Link3b_b.stl" scale="0.1 0.1 0.1" />
+		<mesh file="LWR/LWR_Link4a_b.stl" scale="0.1 0.1 0.1" />
+		<mesh file="LWR/LWR_Link4b_b.stl" scale="0.1 0.1 0.1" />
+		<mesh file="LWR/LWR_Link5a_b.stl" scale="0.1 0.1 0.1" />
+		<mesh file="LWR/LWR_Link6a_b.stl" scale="0.1 0.1 0.1" />
+		<mesh file="LWR/LWR_Link7a_b.stl" scale="0.1 0.1 0.1" />
+	</asset>
+	
+</mujocoinclude>
+
