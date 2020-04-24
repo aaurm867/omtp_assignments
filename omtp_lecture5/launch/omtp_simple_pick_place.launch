@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Start the move it commander with the remap to /combined_joint_states -->
+  <node name="omtp_simple_pick_place" pkg="omtp_lecture5" type="simple_pick_place.py" output="screen">
+  </node>
+</launch>

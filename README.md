@@ -2,7 +2,7 @@
 This repository contains the files of group 867 for the course Object manipulation and task planning at Aalborg university.
 
 ## Getting Started: 
-This repository is a ROS package. To install it you need to:
+This repository is a ROS package tested only on melodic. To install it you need to:
 * [Install ros melodic](http://wiki.ros.org/melodic/Installation/Ubuntu)
 * [Install catkin_tools](https://catkin-tools.readthedocs.io/en/latest/installing.html)
 * Install the abb robot description (`

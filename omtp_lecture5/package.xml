@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>omtp_lecture5</name>
+  <version>0.0.0</version>
+  <description>The omtp_lecture5 package</description>
+  <maintainer email="sb@mp.aau.dk">Simon Bøgh</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>actionlib</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>moveit_msgs</exec_depend>
+</package>
