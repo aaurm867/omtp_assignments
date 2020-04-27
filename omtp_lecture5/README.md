@@ -11,7 +11,7 @@ sudo apt-get install ros-melodic-moveit ros-melodic-moveit-commander ros-melodic
 ## Assignment 1
 
 Created moveit configuration for the factory environment from lecture 1.
-This was done by using the moveit configuration assistant. The result is the ros package in [here](omtp_moveit_config/package.xml).
+This was done by using the moveit configuration assistant. The result is the ros package in [here](https://github.com/aaurm867/omtp_assignments/blob/master/omtp_moveit_config).
 
 ## Assignment 2
 
