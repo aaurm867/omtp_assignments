@@ -65,9 +65,9 @@
         <joint name="robot1_wrist_3_joint" value="-0.0521" />
     </group_state>
     <group_state name="R2PreGrasp" group="robot2">
-        <joint name="robot2_elbow_joint" value="0.3645" />
-        <joint name="robot2_shoulder_lift_joint" value="-0.4339" />
-        <joint name="robot2_shoulder_pan_joint" value="-1.5447" />
+        <joint name="robot2_elbow_joint" value="1.0585" />
+        <joint name="robot2_shoulder_lift_joint" value="-0.9903" />
+        <joint name="robot2_shoulder_pan_joint" value="0.6829" />
         <joint name="robot2_wrist_1_joint" value="-1.6489" />
         <joint name="robot2_wrist_2_joint" value="-1.6489" />
         <joint name="robot2_wrist_3_joint" value="0" />
