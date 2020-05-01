@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>omtp_utilities</name>
+  <version>0.1.0</version>
+  <description>The omtp_utilities package</description>
+  <maintainer email="sb@mp.aau.dk">Simon Bøgh</maintainer>
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+</package>

@@ -12,7 +12,7 @@
 
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find omtp_gazebo)/worlds/omtp.world"/>
+    <arg name="world_name" value="$(find omtp_gazebo)/worlds/lecture6_assignment1.world"/>
     <arg name="debug" value="$(arg debug)" />
     <arg name="gui" value="$(arg gui)" />
     <arg name="paused" value="$(arg paused)"/>
@@ -25,7 +25,7 @@
   <include file="$(find omtp_support)/launch/load_omtp.launch"/>
 
   <!-- Start move_group -->
-  <include file="$(find omtp_moveit_config)/launch/move_group.launch"/>
+  <include file="$(find moveit_moveit_config)/launch/move_group.launch"/>
 
   <!-- Spawn the URDF objects into Gazebo -->
   <include file="$(find omtp_gazebo)/launch/spawn_static_world_objects.launch"/>
@@ -48,9 +48,10 @@
   <!-- Start RVIZ with Gazebo if necessary -->
   <node if="$(arg rviz)" name="rviz" pkg="rviz" type="rviz" args="-d $(find omtp_support)/config/omtp.rviz"/>
 
-  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robots_state_publisher">
+  <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robots_state_publisher">
     <param name="publish_frequency" type="double" value="50.0"/>
     <!-- <remap from="/joint_states" to="/combined_joint_states"/> -->
   </node>
+
 
 </launch>
