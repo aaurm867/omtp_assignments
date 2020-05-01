@@ -25,7 +25,7 @@
   <include file="$(find omtp_support)/launch/load_omtp.launch"/>
 
   <!-- Start move_group -->
-  <include file="$(find moveit_moveit_config)/launch/move_group.launch"/>
+  <include file="$(find omtp_moveit_config)/launch/move_group.launch"/>
 
   <!-- Spawn the URDF objects into Gazebo -->
   <include file="$(find omtp_gazebo)/launch/spawn_static_world_objects.launch"/>
