@@ -80,6 +80,14 @@
         <joint name="robot2_wrist_2_joint" value="-1.6489" />
         <joint name="robot2_wrist_3_joint" value="0.0521" />
     </group_state>
+    <group_state name="R2High" group="robot2">
+        <joint name="robot2_elbow_joint" value="0.9546" />
+        <joint name="robot2_shoulder_lift_joint" value="-1.4753" />
+        <joint name="robot2_shoulder_pan_joint" value="1.8571" />
+        <joint name="robot2_wrist_1_joint" value="-1.0935" />
+        <joint name="robot2_wrist_2_joint" value="-1.5447" />
+        <joint name="robot2_wrist_3_joint" value="0.2256" />
+    </group_state>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="robot1" type="fixed" parent_frame="robot1_base_link" child_link="world" />
     <virtual_joint name="robot2" type="fixed" parent_frame="robot2_base_link" child_link="world" />

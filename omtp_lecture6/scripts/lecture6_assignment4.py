@@ -142,6 +142,16 @@ if __name__ == '__main__':
     robot2_client.send_goal(goal)
     robot2_client.wait_for_result()
 
+    # go to high position
+    robot2_group.set_named_target("R2High")
+
+    plan_high=robot2_group.plan()
+    goal=moveit_msgs.msg.ExecuteTrajectoryGoal()
+    goal.trajectory=plan_high
+
+    robot2_client.send_goal(goal)
+    robot2_client.wait_for_result()
+
     #go to bin
     robot2_group.set_named_target("R2Place")
     plan_bin=robot2_group.plan()
