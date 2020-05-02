@@ -12,6 +12,17 @@ from omtp_gazebo.srv import VacuumGripperControl
 import tf2_ros
 import tf2_geometry_msgs
 
+def plan_and_execute(named_position, robot_group, robot_client):
+
+    robot_group.set_named_target(named_position)
+
+    plan=robot_group.plan()
+    goal=moveit_msgs.msg.ExecuteTrajectoryGoal()
+    goal.trajectory=plan
+
+    robot_client.send_goal(goal)
+    robot_client.wait_for_result()
+
 
 def logical_camera2_callback(data):
     global Object_position
@@ -50,6 +61,7 @@ if __name__ == '__main__':
 
     # Initialize ROS node
     rospy.init_node('lecture6_assignment4', anonymous=True)
+    Setgripper = rospy.ServiceProxy('/gripper2/control',VacuumGripperControl)
 
     moveit_commander.roscpp_initialize(sys.argv)
 
@@ -70,14 +82,7 @@ if __name__ == '__main__':
     rospy.loginfo('Execute Trajectory server is available for robot2')
 
     # go to pregrasp position
-    robot2_group.set_named_target("R2PreGrasp")
-
-    plan_pregrasp=robot2_group.plan()
-    goal=moveit_msgs.msg.ExecuteTrajectoryGoal()
-    goal.trajectory=plan_pregrasp
-
-    robot2_client.send_goal(goal)
-    robot2_client.wait_for_result()
+    plan_and_execute("R2PreGrasp", robot2_group, robot2_client)
 
     rospy.loginfo('finished first movement')
 
@@ -85,9 +90,9 @@ if __name__ == '__main__':
     current_pose = robot2_group.get_current_pose()
     rospy.loginfo(current_pose)
     above_object_pose = geometry_msgs.msg.Pose()
-    above_object_pose.position.x =Object_position.pose.position.x
-    above_object_pose.position.y =Object_position.pose.position.y
-    above_object_pose.position.z =Object_position.pose.position.z+Z_offset
+    above_object_pose.position.x = Object_position.pose.position.x
+    above_object_pose.position.y = Object_position.pose.position.y
+    above_object_pose.position.z = Object_position.pose.position.z + Z_offset
 
     rospy.loginfo(above_object_pose)
 
@@ -96,16 +101,16 @@ if __name__ == '__main__':
 
     robot2_group.set_pose_target(above_object_pose)
 
-    plan=robot2_group.plan()
-    goal=moveit_msgs.msg.ExecuteTrajectoryGoal()
-    goal.trajectory=plan
+    plan = robot2_group.plan()
+    goal = moveit_msgs.msg.ExecuteTrajectoryGoal()
+    goal.trajectory = plan
 
     robot2_client.send_goal(goal)
     robot2_client.wait_for_result()
 
     #carthesion downward movement
     on_object_pose=copy.deepcopy(above_object_pose)
-    on_object_pose.position.z-=Z_offset/2
+    on_object_pose.position.z -= Z_offset/2
     waypoints=[]
     waypoints.append(above_object_pose)
     waypoints.append(on_object_pose)
@@ -124,7 +129,6 @@ if __name__ == '__main__':
     
     rospy.loginfo('planned second movement')
 
-    Setgripper=rospy.ServiceProxy('/gripper2/control',VacuumGripperControl)
     Setgripper(True)
 
     robot2_goal = moveit_msgs.msg.ExecuteTrajectoryGoal()
@@ -133,33 +137,13 @@ if __name__ == '__main__':
     robot2_client.wait_for_result()
 
     # go to pregrasp position
-    robot2_group.set_named_target("R2PreGrasp")
-
-    plan_pregrasp=robot2_group.plan()
-    goal=moveit_msgs.msg.ExecuteTrajectoryGoal()
-    goal.trajectory=plan_pregrasp
-
-    robot2_client.send_goal(goal)
-    robot2_client.wait_for_result()
+    plan_and_execute("R2PreGrasp", robot2_group, robot2_client)
 
     # go to high position
-    robot2_group.set_named_target("R2High")
-
-    plan_high=robot2_group.plan()
-    goal=moveit_msgs.msg.ExecuteTrajectoryGoal()
-    goal.trajectory=plan_high
-
-    robot2_client.send_goal(goal)
-    robot2_client.wait_for_result()
+    plan_and_execute("R2High", robot2_group, robot2_client)
 
     #go to bin
-    robot2_group.set_named_target("R2Place")
-    plan_bin=robot2_group.plan()
-    goal=moveit_msgs.msg.ExecuteTrajectoryGoal()
-    goal.trajectory=plan_bin
-
-    robot2_client.send_goal(goal)
-    robot2_client.wait_for_result()
+    plan_and_execute("R2Place", robot2_group, robot2_client)
 
     Setgripper(False)
 
