@@ -58,11 +58,11 @@ def logical_camera2_callback(data):
         object_pose.pose.orientation.w = data.models[-1].pose.orientation.w
         while True:
             try:
-                object_world_pose = tf_buffer.transform(object_pose, "world")
+                object_gripper_pose = tf_buffer.transform(object_pose, "vacuum_gripper2_suction_cup")
                 break
             except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException):
                 continue
-        rospy.loginfo('Pose of the object in the world is: %s', object_world_pose)
+        rospy.loginfo('Pose of the object in the reference frame of the gripper is: %s', object_gripper_pose)
         rospy.loginfo('Pose of the object in the reference frame of logical camera 2 is: %s', object_pose)
         # Gracefully terminate the ROS node after transforming the pose.
         rospy.signal_shutdown('Successfully transformed pose.')

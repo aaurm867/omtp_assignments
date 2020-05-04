@@ -13,7 +13,7 @@ The simulation was run with the two cameras and tf tree was extracted as a pdf.
 ![Frames](frames.svg)
 
 ## Assignment 3
-An object was spawned near Robot2, the observed coordinates for the object are transformed into world frame. The code can be found [here](scripts/lecture6_assignment3.py).
+An object was spawned near Robot2, the observed coordinates for the object are transformed into gripper frame. The code can be found [here](scripts/lecture6_assignment3.py).
 
 ## Assignment 4
 A python script is written to pick up the spawned object and drop it in the nearest bin. The script was written for Robot2. The code can be found [here](scripts/lecture6_assignment4.py).
