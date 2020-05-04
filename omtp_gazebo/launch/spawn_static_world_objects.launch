@@ -10,6 +10,7 @@
   <arg name="vacuum_gripper2_prefix" value="vacuum_gripper2_"/>
   <arg name="break_beam" value="break_beam_"/>
   <arg name="bin_1" value="bin_1_"/>
+  <arg name="bin_2" value="bin_2_"/>
 
   <!-- Parameters and nodes in the global namespace. -->
   <param name="$(arg workcell)description"
@@ -20,6 +21,9 @@
 
   <param name="$(arg bin_1)description"
     command="$(find xacro)/xacro '$(find omtp_support)/urdf/bin/bin.xacro' prefix:=$(arg bin_1)"/>
+
+  <param name="$(arg bin_2)description"
+    command="$(find xacro)/xacro '$(find omtp_support)/urdf/bin/bin.xacro' prefix:=$(arg bin_2)"/>
 
   <param name="$(arg robot1_pedestal)description"
     command="$(find xacro)/xacro '$(find omtp_support)/urdf/robot_pedestal/robot1_pedestal.xacro' pedestal_prefix:=$(arg robot1_pedestal) pedestal_parent:=$(arg workcell_parent_name) pedestal_height:=0.95"/>
@@ -32,6 +36,9 @@
 
   <node name="$(arg bin_1)spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
     args="-x -8.0 -y -2.2 -urdf -model $(arg bin_1) -param $(arg bin_1)description"/>
+
+  <node name="$(arg bin_2)spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-x -0.3 -y 1.4 -urdf -model $(arg bin_2) -param $(arg bin_2)description"/>
 
   <node name="$(arg robot1_pedestal)spawner" pkg="gazebo_ros" type="spawn_model" output="screen"
     args="-urdf -model $(arg robot1_pedestal) -param $(arg robot1_pedestal)description"/>

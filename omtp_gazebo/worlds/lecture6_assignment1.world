@@ -72,6 +72,13 @@
       <uri>model://logical_camera2</uri>
       <pose>-8.3 -1.23 1.8 0 1.57 0</pose>
     </include>
+    
+    <xacro:bin_urdf prefix="bin_2_"/>
+    <joint name="bin_2_joint" type="fixed">
+      <parent link="world_interface" />
+      <child link="bin_2_base_link" />
+      <origin xyz="-0.3 1.4 0.0" rpy="0 0 0" />
+    </joint>
 
   </world>
 </sdf>

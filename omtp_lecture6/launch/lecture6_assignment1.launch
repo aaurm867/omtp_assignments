@@ -37,7 +37,7 @@
     <remap from="/start_spawn" to="/spawn_object_once"/>
   </node>
 
-  <node name="spawn_object_once" pkg="omtp_utilities" type="spawn_object_once.py" output="screen"/>
+  <!--node name="spawn_object_once" pkg="omtp_utilities" type="spawn_object_once.py" output="screen"/-->
 
   <!-- Combine joint state information from two robots. -->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
