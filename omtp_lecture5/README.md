@@ -1,6 +1,6 @@
 # Lecture 5: moveit intro
 
-All the assignments were follwing the instructions in the lecture [slides](OMTP_LEC_5_MANIPULATION_WITH_MOVEIT.pdf).
+All the assignments were completed following the instructions in the lecture [slides](OMTP_LEC_5_MANIPULATION_WITH_MOVEIT.pdf).
 
 ## Dependencies
 

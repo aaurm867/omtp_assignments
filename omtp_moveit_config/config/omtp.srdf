@@ -45,29 +45,29 @@
         <joint name="robot1_shoulder_lift_joint" value="-1.57" />
         <joint name="robot1_shoulder_pan_joint" value="-1.57" />
         <joint name="robot1_wrist_1_joint" value="-1.57" />
-        <joint name="robot1_wrist_2_joint" value="0" />
+        <joint name="robot1_wrist_2_joint" value="1.57" />
         <joint name="robot1_wrist_3_joint" value="0" />
     </group_state>
     <group_state name="R1PreGrasp" group="robot1">
-        <joint name="robot1_elbow_joint" value="-1.6836" />
-        <joint name="robot1_shoulder_lift_joint" value="-2.0654" />
-        <joint name="robot1_shoulder_pan_joint" value="-2.6902" />
-        <joint name="robot1_wrist_1_joint" value="-0.9893" />
-        <joint name="robot1_wrist_2_joint" value="1.6489" />
+        <joint name="robot1_elbow_joint" value="-1.9816" />
+        <joint name="robot1_shoulder_lift_joint" value="-1.6594" />
+        <joint name="robot1_shoulder_pan_joint" value="-3.0448" />
+        <joint name="robot1_wrist_1_joint" value="-1.0472" />
+        <joint name="robot1_wrist_2_joint" value="1.57" />
         <joint name="robot1_wrist_3_joint" value="0" />
     </group_state>
     <group_state name="R1Place" group="robot1">
-        <joint name="robot1_elbow_joint" value="0.0868" />
-        <joint name="robot1_shoulder_lift_joint" value="0.6422" />
-        <joint name="robot1_shoulder_pan_joint" value="-2.3431" />
-        <joint name="robot1_wrist_1_joint" value="-2.239" />
-        <joint name="robot1_wrist_2_joint" value="-1.3364" />
+        <joint name="robot1_elbow_joint" value="1.6271" />
+        <joint name="robot1_shoulder_lift_joint" value="-0.7572" />
+        <joint name="robot1_shoulder_pan_joint" value="-2.8515" />
+        <joint name="robot1_wrist_1_joint" value="-2.4649" />
+        <joint name="robot1_wrist_2_joint" value="-1.5305" />
         <joint name="robot1_wrist_3_joint" value="-0.0521" />
     </group_state>
     <group_state name="R2PreGrasp" group="robot2">
-        <joint name="robot2_elbow_joint" value="0.3645" />
-        <joint name="robot2_shoulder_lift_joint" value="-0.4339" />
-        <joint name="robot2_shoulder_pan_joint" value="-1.5447" />
+        <joint name="robot2_elbow_joint" value="1.0585" />
+        <joint name="robot2_shoulder_lift_joint" value="-0.9903" />
+        <joint name="robot2_shoulder_pan_joint" value="0.6829" />
         <joint name="robot2_wrist_1_joint" value="-1.6489" />
         <joint name="robot2_wrist_2_joint" value="-1.6489" />
         <joint name="robot2_wrist_3_joint" value="0" />
@@ -79,6 +79,14 @@
         <joint name="robot2_wrist_1_joint" value="-1.8224" />
         <joint name="robot2_wrist_2_joint" value="-1.6489" />
         <joint name="robot2_wrist_3_joint" value="0.0521" />
+    </group_state>
+    <group_state name="R2High" group="robot2">
+        <joint name="robot2_elbow_joint" value="0.9546" />
+        <joint name="robot2_shoulder_lift_joint" value="-1.4753" />
+        <joint name="robot2_shoulder_pan_joint" value="1.8571" />
+        <joint name="robot2_wrist_1_joint" value="-1.0935" />
+        <joint name="robot2_wrist_2_joint" value="-1.5447" />
+        <joint name="robot2_wrist_3_joint" value="0.2256" />
     </group_state>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="robot1" type="fixed" parent_frame="robot1_base_link" child_link="world" />
