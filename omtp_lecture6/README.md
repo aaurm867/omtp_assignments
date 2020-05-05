@@ -17,6 +17,7 @@ An object was spawned near Robot2, the observed coordinates for the object are t
 
 ## Assignment 4 - robot1
 A python script is written to pick up the objects coming from the conveyor belt and drop it in the nearest bin. The script was written for Robot2. The code can be found [here](scripts/lecture6_assignment4_robot1.py).
+
 ![Robot movement commanded from python](assignment4_r1.gif)
 ## Assignment 4 - robot2
 A python script is written to pick up the spawned object from the floor and drop it in the nearest bin. The script was written for Robot2. The code can be found [here](scripts/lecture6_assignment4_robot2.py).
