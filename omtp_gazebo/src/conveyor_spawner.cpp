@@ -169,7 +169,7 @@ bool ConveyorSpawner::start(std_srvs::EmptyRequest& req,
 bool ConveyorSpawner::stop(std_srvs::EmptyRequest& req,
           std_srvs::EmptyResponse& res)
 {
-  ROS_INFO("Stopping conveyor spawner...");
+  // ROS_INFO("Stopping conveyor spawner...");
   timer_.stop();
   return true;
 }
