@@ -57,6 +57,7 @@ build/
 bin/
 !**/urdf/**/bin/
 !**/meshes/**/bin/
+!**/flexbe_app/**/bin/
 lib/
 msg_gen/
 srv_gen/
