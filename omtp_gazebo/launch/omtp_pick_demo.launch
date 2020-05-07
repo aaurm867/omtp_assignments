@@ -36,7 +36,7 @@
     <rosparam command="load" file="$(find omtp_gazebo)/config/conveyor_object.yaml"/>
   </node>
 
-  <node name="spawn_object_once" pkg="omtp_utilities" type="spawn_object_once.py" output="screen"/>
+  <!--<node name="spawn_object_once" pkg="omtp_utilities" type="spawn_object_once.py" output="screen"/>-->
   <node name="breakbeam_conveyor_stop" pkg="omtp_utilities" type="breakbeam_conveyor_stop.py" output="screen"/>
 
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
