@@ -1,0 +1,21 @@
+<package>
+  <name>omtp_factory_flexbe_states</name>
+  <version>1.0.0</version>
+  <description>
+     omtp_factory_flexbe_states provides a collection of custom states.
+     Feel free to add new states.
+  </description>
+  <maintainer email="sb@mp.aau.dk">Simon Bøgh</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>rospy</run_depend>
+
+  <run_depend>flexbe_core</run_depend>
+
+  <export>
+    <flexbe_states />
+  </export>
+
+</package>
