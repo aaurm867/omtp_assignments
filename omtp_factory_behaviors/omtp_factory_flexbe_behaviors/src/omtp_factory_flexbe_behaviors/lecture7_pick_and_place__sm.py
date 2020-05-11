@@ -57,7 +57,7 @@ class lecture7pickandplaceSM(Behavior):
 		conveyor_speed = 100
 		move_group = "robot1"
 		joint_names = ["robot1_elbow_joint", "robot1_shoulder_lift_joint", "robot1_shoulder_pan_joint", "robot1_wrist_1_joint", "robot1_wrist_2_joint", "robot1_wrist_3_joint"]
-		# x:1498 y:734, x:90 y:852
+		# x:1738 y:801, x:63 y:817
 		_state_machine = OperatableStateMachine(outcomes=['finished', 'failed'])
 		_state_machine.userdata.conveyor_speed = conveyor_speed
 
@@ -118,114 +118,114 @@ class lecture7pickandplaceSM(Behavior):
 
 
 		with _state_machine:
-			# x:40 y:88
+			# x:32 y:28
 			OperatableStateMachine.add('go home',
 										omtp_factory_flexbe_states__SrdfStateToMoveit(config_name="R1Home", move_group="robot1", action_topic='/move_group', robot_name=""),
 										transitions={'reached': 'start conveyor', 'planning_failed': 'failed', 'control_failed': 'failed', 'param_error': 'failed'},
 										autonomy={'reached': Autonomy.Off, 'planning_failed': Autonomy.Off, 'control_failed': Autonomy.Off, 'param_error': Autonomy.Off},
 										remapping={'config_name': 'config_name', 'move_group': 'move_group', 'robot_name': 'robot_name', 'action_topic': 'action_topic', 'joint_values': 'joint_values', 'joint_names': 'joint_names'})
 
-			# x:477 y:89
+			# x:417 y:26
 			OperatableStateMachine.add('add objects',
 										ControlFeederState(activation=True),
 										transitions={'succeeded': 'wait', 'failed': 'failed'},
 										autonomy={'succeeded': Autonomy.Off, 'failed': Autonomy.Off})
 
-			# x:242 y:92
+			# x:209 y:79
 			OperatableStateMachine.add('start conveyor',
 										SetConveyorPowerState(stop=False),
 										transitions={'succeeded': 'add objects', 'failed': 'failed'},
 										autonomy={'succeeded': Autonomy.Off, 'failed': Autonomy.Off},
 										remapping={'speed': 'conveyor_speed'})
 
-			# x:992 y:23
+			# x:1005 y:70
 			OperatableStateMachine.add('subscribe to beam',
 										SubscriberState(topic="/break_beam_sensor", blocking=True, clear=False),
 										transitions={'received': 'decision', 'unavailable': 'failed'},
 										autonomy={'received': Autonomy.Off, 'unavailable': Autonomy.Off},
 										remapping={'message': 'message'})
 
-			# x:957 y:111
+			# x:1203 y:22
 			OperatableStateMachine.add('decision',
 										DecisionState(outcomes=["True","False"], conditions=lambda a: a.object_detected==True),
 										transitions={'True': 'stop conveyor', 'False': 'subscribe to beam'},
 										autonomy={'True': Autonomy.Off, 'False': Autonomy.Off},
 										remapping={'input_value': 'message'})
 
-			# x:1193 y:99
+			# x:1354 y:60
 			OperatableStateMachine.add('stop conveyor',
 										SetConveyorPowerState(stop=True),
 										transitions={'succeeded': 'get camera state', 'failed': 'failed'},
 										autonomy={'succeeded': Autonomy.Off, 'failed': Autonomy.Off},
 										remapping={'speed': 'conveyor_speed'})
 
-			# x:1332 y:204
+			# x:1612 y:25
 			OperatableStateMachine.add('get camera state',
 										DetectPartCameraState(ref_frame="world", camera_topic="/omtp/logical_camera", camera_frame="logical_camera_frame"),
 										transitions={'continue': 'log', 'failed': 'failed'},
 										autonomy={'continue': Autonomy.Off, 'failed': Autonomy.Off},
 										remapping={'pose': 'pose'})
 
-			# x:1190 y:269
+			# x:1707 y:111
 			OperatableStateMachine.add('log',
 										LogKeyState(text="data:{}", severity=Logger.REPORT_HINT),
 										transitions={'done': 'pregrasp position'},
 										autonomy={'done': Autonomy.Off},
 										remapping={'data': 'pose'})
 
-			# x:1346 y:283
+			# x:1660 y:195
 			OperatableStateMachine.add('pregrasp position',
 										_sm_pregrasp_position_1,
 										transitions={'failed': 'failed', 'reached': 'activate gripper', 'planning_failed': 'failed', 'control_failed': 'failed'},
 										autonomy={'failed': Autonomy.Inherit, 'reached': Autonomy.Inherit, 'planning_failed': Autonomy.Inherit, 'control_failed': Autonomy.Inherit},
 										remapping={'pose': 'pose'})
 
-			# x:1311 y:391
+			# x:1634 y:297
 			OperatableStateMachine.add('activate gripper',
 										VacuumGripperControlState(enable=True, service_name="/gripper1/control"),
 										transitions={'continue': 'grasp', 'failed': 'failed'},
 										autonomy={'continue': Autonomy.Off, 'failed': Autonomy.Off})
 
-			# x:1166 y:616
+			# x:1609 y:674
 			OperatableStateMachine.add('go to bin',
 										omtp_factory_flexbe_states__SrdfStateToMoveit(config_name="R1Place", move_group="robot1", action_topic='/move_group', robot_name=""),
 										transitions={'reached': 'deactivate gripper', 'planning_failed': 'failed', 'control_failed': 'failed', 'param_error': 'failed'},
 										autonomy={'reached': Autonomy.Off, 'planning_failed': Autonomy.Off, 'control_failed': Autonomy.Off, 'param_error': Autonomy.Off},
 										remapping={'config_name': 'config_name', 'move_group': 'move_group', 'robot_name': 'robot_name', 'action_topic': 'action_topic', 'joint_values': 'joint_values', 'joint_names': 'joint_names'})
 
-			# x:1206 y:488
+			# x:1648 y:402
 			OperatableStateMachine.add('grasp',
 										_sm_grasp_0,
 										transitions={'failed': 'failed', 'planning_failed': 'failed', 'control_failed': 'failed', 'reached': 'go to home'},
 										autonomy={'failed': Autonomy.Inherit, 'planning_failed': Autonomy.Inherit, 'control_failed': Autonomy.Inherit, 'reached': Autonomy.Inherit},
 										remapping={'pose': 'pose'})
 
-			# x:1243 y:708
+			# x:1523 y:762
 			OperatableStateMachine.add('deactivate gripper',
 										VacuumGripperControlState(enable=False, service_name="/gripper1/control"),
-										transitions={'continue': 'finished', 'failed': 'failed'},
+										transitions={'continue': 'go to bin', 'failed': 'failed'},
 										autonomy={'continue': Autonomy.Off, 'failed': Autonomy.Off})
 
-			# x:1024 y:559
+			# x:1617 y:504
 			OperatableStateMachine.add('go to home',
 										omtp_factory_flexbe_states__SrdfStateToMoveit(config_name="R1Home", move_group="robot1", action_topic='/move_group', robot_name=""),
 										transitions={'reached': 'wait2', 'planning_failed': 'failed', 'control_failed': 'failed', 'param_error': 'failed'},
 										autonomy={'reached': Autonomy.Off, 'planning_failed': Autonomy.Off, 'control_failed': Autonomy.Off, 'param_error': Autonomy.Off},
 										remapping={'config_name': 'config_name', 'move_group': 'move_group', 'robot_name': 'robot_name', 'action_topic': 'action_topic', 'joint_values': 'joint_values', 'joint_names': 'joint_names'})
 
-			# x:637 y:102
+			# x:622 y:70
 			OperatableStateMachine.add('wait',
 										WaitState(wait_time=3),
 										transitions={'done': 'stop adding objects'},
 										autonomy={'done': Autonomy.Off})
 
-			# x:734 y:94
+			# x:773 y:25
 			OperatableStateMachine.add('stop adding objects',
 										ControlFeederState(activation=False),
 										transitions={'succeeded': 'subscribe to beam', 'failed': 'failed'},
 										autonomy={'succeeded': Autonomy.Off, 'failed': Autonomy.Off})
 
-			# x:1393 y:608
+			# x:1682 y:589
 			OperatableStateMachine.add('wait2',
 										WaitState(wait_time=1),
 										transitions={'done': 'go to bin'},
