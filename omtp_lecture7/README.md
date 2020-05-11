@@ -9,4 +9,4 @@ Added the functionality of conveyor belt movement to bring a box into the center
 
 The state machine diagram can be found [here](State_machine.png).
 
-A video of the process can be found [here](Robot-1.mp4).
+A video of the process can be found [here](https://youtu.be/wnEyKtnJhFk).
