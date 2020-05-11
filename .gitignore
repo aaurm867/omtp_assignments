@@ -54,9 +54,9 @@
 devel/
 logs/
 build/
-bin/
 !**/urdf/**/bin/
 !**/meshes/**/bin/
+bin/
 lib/
 msg_gen/
 srv_gen/

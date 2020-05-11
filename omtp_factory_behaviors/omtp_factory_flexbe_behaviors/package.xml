@@ -1,0 +1,18 @@
+<package>
+  <name>omtp_factory_flexbe_behaviors</name>
+  <version>1.0.0</version>
+  <description>
+     omtp_factory_flexbe_behaviors references all implemented behaviors.
+  </description>
+  <maintainer email="sb@mp.aau.dk">Simon Bøgh</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>rospy</run_depend>
+
+  <export>
+    <flexbe_behaviors />
+  </export>
+
+</package>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="lecture7 pick and place ">
+
+	<executable package_path="omtp_factory_flexbe_behaviors.lecture7_pick_and_place__sm" class="lecture7pickandplaceSM" />
+	<tagstring></tagstring>
+	<author>AAU gr867</author>
+	<date>Thu May 07 2020</date>
+	<description>
+		Pick and place objects with robot1 and place it in a bin
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+
+</behavior>
