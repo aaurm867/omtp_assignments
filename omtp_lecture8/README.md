@@ -12,7 +12,7 @@ Ander's Result:
 ![Ander's Result](Ander.gif)
 
 Beda's Result:
-![Beda's Result](Beda.gif)
+![Beda's Result](Beda.png)
 
 Iñigo's Result:
 ![Iñigo's Result](Iñigo.gif)
