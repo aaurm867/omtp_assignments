@@ -15,7 +15,7 @@ The tutorials [Building a Visual Robot Model with URDF from Scratch](http://wiki
 The tutorial [Using Xacro to Clean Up a URDF File](http://wiki.ros.org/urdf/Tutorials/Using%20Xacro%20to%20Clean%20Up%20a%20URDF%20Filehttp://wiki.ros.org/urdf/Tutorials/Using%20Xacro%20to%20Clean%20Up%20a%20URDF%20File) is applied in [this file](urdf_tutorial/urdf/08-macroed.urdf.xacro).
 
 ### 3.-6. Factory
-The edited launch file can be found [here](../omtp_support/urdf/omtp_factory_assignment.xacro)
+The edited launch file can be found [here](../omtp_support/urdf/omtp_factory_assignment.xacro).
 
 ## Instructions: 
 * To see the urdf files generated in assignments 1 and 2, use the command `roslaunch urdf_tutorial display.launch {file_name}.urdf`
