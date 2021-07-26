@@ -10,5 +10,10 @@
 
   <exec_depend>actionlib</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>
-  <exec_depend>moveit_msgs</exec_depend>
+  <exec_depend>moveit</exec_depend>
+  <exec_depend>moveit-commander</exec_depend>
+  <exec_depend>joint-trajectory-controller </exec_depend>
+  <exec_depend>ros-control</exec_depend>
+  <exec_depend>gazebo-ros-control</exec_depend>
+  <exec_depend>moveit-commander</exec_depend>
 </package>
